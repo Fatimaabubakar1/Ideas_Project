@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h2>Student Results</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Grade</th>
+            <th>GPA</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.first_name }} {{ result.last_name }}</td>
+            <td>{{ result.course.name }}</td>
+            <td>{{ result.grade }}</td>
+            <td>{{ result.academic_year }}</td>
+            
+        </tr>
+        {% empty %}
+        
+        {% endfor %}
+    </table>
+
+    <p>Current time: {{ current_time|date:"Y-m-d H:i:s" }} ({{ current_timezone }})</p>
+</body>
+</html>
